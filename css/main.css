@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*COMMON*/
 body {
   font-family: 'Nanum Gothic', sans-serif;
@@ -114,11 +115,103 @@ header {
 header > .inner {
   height: 120px;
 }
+=======
+/* COMMON */  /*COMMON 이란 공통적인 이라는 뜻을 가지므로 이 주석은 공통적으로 적용이 되는 코드가 있는 공간임을 표시하는 역활이다.*/
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight:400;
+  line-height:1.4;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+img {
+  display: block; /* img 요소는 인라인 요소고 인라인 요소는 글자 요소로써 html에서 baseline이라는 것을 갖는다. 
+                그렇기 때문에 밑에 여백이 생기는 것이고 img 태그의 display속성을 block으로 바꿈으로서 문제를 해결할수있다. */
+}
+
+a {
+  text-decoration: none;
+}
+.inner {
+  width:1100px;
+  margin: 0 auto;
+  position:relative;
+}
+.btn {
+  width:130px;
+  padding:10px;
+  border: 2px solid #333;
+  border-radius:4px;
+  color:#333;
+  font-size:16px;
+  font-weight:700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing:border-box;
+  display:block;
+  transition:0.4s;
+}
+.btn:hover {
+  background-color:#333;
+  color:#fff;
+}
+.btn.btn--reverse { /* 색상이 반전된 버튼을 사용할 때가 있을태니 미리 반전된 버튼을 사용할 클래스를 만들어듐 */
+  background:#333;
+  color:#fff;
+}
+.btn.btn--reverse:hover {
+  background:transparent;
+  color:#333;
+}
+.btn.btn--brown {
+  color:#592b18;
+  border-color:#592b18;
+}
+.btn.btn--brown:hover {
+  color:#fff;
+  background-color:#592b18;
+}
+.btn.btn--gold {
+  color:#D9AA8A;
+  border-color:#D9AA8A;
+}
+.btn.btn--gold:hover {
+  color:#fff;
+  background-color: #D9AA8A;
+}
+.btn.btn--white {
+  color:#fff;
+  border-color:#fff;
+}
+.btn.btn--white:hover {
+  color:#333;
+  background-color:#fff;
+}
+
+
+/* HEADER */
+header {
+  background-color:#f6f5f0;
+  border-bottom:1px solid #c8c8c8;
+  /* position:relative; */ /* 부모의 position값을 지정하기 위해서 relative를 주었지만 필요한 Position값이 있어 사용하게 되었으면 없애도됨 */
+  position:fixed; /* 원래 블록요소는 가로너비가 최대한으로 늘어나려고 하지만 position값이 absolute이거나 fixed인 블록 요소는 가로너비가 최대한으로 줄어드려고 한다.(속한 컨텐츠의 크기만큼으로) */
+  width:100%;
+  top:0px;
+  z-index:9;
+}
+
+header > .inner {
+  height:120px;
+}
+
+>>>>>>> f443aad (Start project)
 header .logo {
   height: 75px;
   position: absolute;
   top: 0;
   bottom: 0;
+<<<<<<< HEAD
   left: 0;
   margin: auto;
 }
@@ -309,10 +402,288 @@ header .badges .badge {
 }
 .visual .spoon {
   position: absolute;
+=======
+  left:0; /*왼쪽에 붙어있음을 명시*/
+  margin:auto 0;
+    /* width:75px;
+  right:0;
+  left:0;  수평의 가운데로 옮기려면 수평길이 즉 width값이 필요하고 absolute에서 수평의 중심 즉 right와 left가 0이어야 함 또한 margin auto룰 수직방향으로 주려면 0 auto를 값으로 줘야 함
+  지금 수직 정렬 시키는 것도 같은 이론으로 수직정렬을 위해 height값이 필요하고 top과 bottom이 각각 0이라는 값을 가지고 margin auto를
+  수직 방향 즉 auto 0 을 줌으로써 수직 가운데에 정렬할수있음 추가적으로 만약 widht값과 right left 값이 있을수있으니 수직 정렬만 하고싶다면
+  margin값을 수직에만 auto로 즉 auto 0을 값으로 넣으면 된다.*/
+}
+  
+.back-to-position {
+  opacity:0;
+  transition:1s;
+}
+
+.back-to-position.to-right {
+  transform:translateX(-150px); /* 지금 해당 클래스를 가진 요소는 오른쪽에 가있도록 하고 나중에 transform 값을 보이도록 명시해서 다시 보이게 하려고 한다. */
+}
+.back-to-position.to-left {
+  transform:translateX(150px); /* 위의 설명과 동일하지만 이건 왼쪽으로 가있다가 나오는것임 그래서 translateX의 값이 다름 */
+}
+.show .back-to-position {
+  opacity:1;
+  transform: translateX(0); /* opacity 값을 1로 해서 다시 화면에 보이게 하고 translateX의 값을 0으로 해서 원래 위치로 돌아오도록 함 */
+}
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: 0.3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: 0.6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: 0.9s;
+}
+
+
+
+
+
+header .sub-menu {
+  display:flex;
+  position:absolute;
+  top:10px;
+  right:0px;
+}
+
+header .sub-menu ul.menu{
+  display:flex;
+  font-family: Arial, sans-serif;
+}
+/* 이와 같이 부모 요소들을 써주는 것은 조금더 원하는 부분에 타겟팅 하기 위함이다. 예를 들어 menu라는 클래스는 여기 저기 많을텐데 
+header 안에 있는 sub-menu 클래스 안에 있는 menu는 정말 내가 원하는 것일것이기 때문이다. 만약 부모 요소들을 써주지 않으면
+ul.menu 라고만 쓴다면 html 문서 여기저기에 있는 menu라는 태그에 모두 적용이 될것이다. */
+
+header .sub-menu ul.menu li{
+  position:relative;
+}
+header .sub-menu ul.menu li::before {
+  content: "";
+  width:1px; /* width와 height값을 주려면 display가 block이어야 하므로 display를 block으로 줬지만 position이 absolute가 되면 자동으로 display는 block이 됨 
+              근데 여기서 어떻게 display가 block인데 옆에 주르륵  붙어있을수있느냐 한다면 문서 흐름에서 제거: absolute로 설정된 요소는 문서 흐름에서 제거되므로, 다른 요소들이 그 요소를 인식하지 못하고, 그 위치를 차지하지 않습니다.
+              그러므로 absolute에서의 diplay는 width와 height를 최소로 갖는지 아니면 width와 height를 조정할수있는지 정도의 차이다. 그렇기 떄문에 결국 absolute 일떄 더 잘 사용하려면 display가 block이어야 하고 그러므로 자동으로 block이 되는것. */
+  height:12px;
+  background-color:#e5e5e5;
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin:auto 0;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+  display:none; /* 원래는 맨 앞에서 구분선이 있었는데 해당 구분선은 없어야 되서 첫번째 자식요소의 before의 값은 display none으로 보이지 않게함  */
+}
+
+header .inner .sub-menu ul.menu li a{ /* 원하는 곳에 타겟팅 하는데에 필요없는 중간 선택자는 생략해도 됨 여기서는 .inner가 생략됨 없어도 동일한 타겟팅이 되므로..*/
+  font-size:13px;
+  padding:11px 16px;
+  display:block;
+  color:#656565;
+}
+
+header .inner .sub-menu ul.menu li a:hover {
+  color:#000;
+}
+
+header .sub-menu .search {
+  height:34px; /* flex-item이 되면 높이가 자동으로 늘어날수있으므로 미리 height값을 명시한다.
+                  만약 height값을 명시하지 않으면 .search의 높이가 늘어나게 됩니다. 이러한 현상은 flexbox의 align-items: stretch; 속성 때문입니다.
+                  flex-item은 블록 요소처럼 공간을 차지할 수 있지만, 인라인 요소처럼 수평으로 배치될 수 있는 특성을 가지고 있습니다.
+                  lexbox 컨테이너 내의 각 flex-item은 기본적으로 자신의 컨텐츠에 맞게 크기가 결정됩니다.
+                  자식 요소인 input이 search의 콘텐츠입니다. 그래서 search의 width는 자식 요소의 크기에 맞게 줄어듭니다. 
+                 */
+  position:relative;
+}
+
+header .sub-menu .search input {
+  width:36px;
+  height:34px;
+  padding : 4px 10px;
+  border :  1px solid #ccc;
+  box-sizing:border-box;
+  border-radius:5px;
+  outline:none;
+  background-color:#fff;
+  color : #777;
+  font-size:12px;
+  transition:width 0.4s;
+}
+
+header .sub-menu .search input:focus {
+  width:190px;
+  border-color:#669900;
+}
+
+
+header .sub-menu .search .material-icons {
+  position:absolute; /* 이때 search 로고가 sub-menu의 position이 flex가 됨에 따라 input과 겹쳐지는 것처럼 보이는데 사실은 그냥 위에 존재하는 것이고 안에 들어간것은 아님 안에 존재하는 것이 아니라면 왜 input을 눌렀을때 같이 이동하느냐 이유는 search 아이콘에 right:5px; 즉 부모 요소의 오른쪽에서 5px만 떨어지게 되어있기 떄문에 input이 focus 되면서 늘어날때 늘어나는 부모요소와의 거리를 유지하려고(오른쪽에서 5px) 따라가는 것임 */
+  height:24px;
+  top:0;
+  bottom:0;
+  right:5px;
+  margin: auto 0;
+  transition: 0.4s; /* 여기서 알수있는 사실! transition이 적용된 타겟에 이후에 생긴 변화라면 hover혹은 active 혹은 focus 같은 것 가상클래스들이 없더라도 전환 효과를 줄수있다. */
+}
+
+header .sub-menu .search.focused .material-icons {
+  opacity:0; /* 클릭이 되면 focus 되고 focus되면 focused라는 클래스가 추가가 됨 즉 input창이 늘어났을떄의 상황인데 이때 돋보기 아이콘을 opacity : 0 을 통해 보이지 않도록 함 */
+}
+
+header .main-menu {
+  display:flex;
+  bottom:0;
+  right:0;
+  z-index:1;
+  position:absolute;
+}
+header .main-menu .item {
+
+}
+
+header .main-menu .item .item__name {
+  padding:10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size:13px;
+}
+header .main-menu .item:hover .item__name { /* 왜 hover가 끝이 아니라 저렇게 중간에 있냐? item__name에 hover를 주면 item__content가 영향을 받아야 하는데 받지 못함 그래서 item 자체에 hover를 주고 뒤에 item__name을 써서 item에 hover 되었을때 item__name의 변경을 입력하고 밑에서 따로 item이 hover 됐을때 item__contents의 변경도 입력해줄것. */
+  background-color: #2c2a29;
+  color:#669900;
+  border-radius:5px 5px 0 0;
+}
+
+header .main-menu .item .item__contents {
+  width:100%;
+  position:fixed; /* position을 fixed로 해서 뷰포트를 기준으로 위치하도록 한 이유는 absolute로 하면 부모 요소를 기준으로 위치하기 때문에 부모인 main-menu의 바깥쪽 즉 뷰포트 기준 왼쪽에 딱 붙도록 할수가 없음 그리고 width:100%가 부모요소인 main-menu의 width만큼으로 설정됨. 그래서 fixed를 하여 width:100%를 하면 뷰포트 width값의 전체로 설정되고 left:0;을 하면 뷰포트 기준 왼쪽으로 붙게됨 그래서 fixed를 사용함 */
+  left:0;
+  display:none; /* display none으로 안보이게 하는 이유는 우선 hover했을때 나오게 해야 하고 hover하지 않아도 나와도 상관없는데 그렇게 되면 z-index까지 같으니 마지막에 선언된 store가 맨위에 자리잡아 다른 것들은 안보이기 때문임. */
+}
+header .main-menu .item:hover .item__contents {
+  display:block;
+}
+header .main-menu .item .item__contents .contents__menu{
+  background-color: #2c2a29;
+}
+
+header .main-menu .item .item__contents .contents__menu  > ul {
+  display:flex;
+  padding:20px 0;
+} /* 하위 선택자가 아닌 자식선택자를 사용한 이유는 contents__menu 하위에 두개의 ul들어있기 때문 */
+
+header .main-menu .item .item__contents .contents__menu  > ul > li {
+  width:220px;
+}
+header .main-menu .item .item__contents .contents__menu  > ul > li > a {
+  padding:3px 0 12px 0;
+  font-size:14px;
+  color:#fff;
+}
+
+header .main-menu .item .item__contents .contents__menu  > ul > li ul li {
+  padding:5px 0;
+  font-size:12px;
+  color:#999;
+  cursor:pointer;
+}
+header .main-menu .item .item__contents .contents__menu  > ul > li ul li:hover {
+  color:#669900;
+}
+
+header .main-menu .item .item__contents .contents__texture{
+  padding:26px 0;
+  font-size:12px;
+  background-image:url("../images/main_menu_pattern.jpg"); /*이때 이미지가 가로가 훨씬 작지만 반복되는 속성덕분에 다른것을 입력하지 않아도 알아서 반복되어 채워주었다.background-repeat의 기본값 repeat덕분*/
+
+} /* 여기서 이런 의문이 들수있음 item을 선택하면 나오게 되는데 item에 hover가 됐을때 어느 item인줄알고 해당하는 값의 item__contents가 나오지? 답은 정말 쉬움 많은 item 클래스 요소중에 hover 된 값은 하나일것이고. item이 hover되면 자식 요소인 item__contents가 나오므로 hover된 item의 자식인 item__contents가 나오는것임 다른 item__contents 들은 본인들의 item이 hover되지 않았으므로 나오지 않음 
+!!! 쉽게 설명하자면 각각의 item에 들어있는 많은 item__contents 중 item이 hover된 녀석은 하나이기 때문에 해당 하는 item__contents가 나오는 것임 아무리 클래스 명이 같아도 하나가 hover됐다고 전부다 hover되는 것은 아니고 hover된 아이템이 있고 hover안된 아이템이 있는것임!!! */
+
+header .main-menu .item .item__contents .contents__texture h4 {
+  color:#999;
+  font-weight:700;
+}
+header .main-menu .item .item__contents .contents__texture p {
+  color:#669900;
+  margin: 4px 0 14px;
+}
+
+header .badges {
+  position:absolute;
+  top:132px;
+  right:12px;
+
+} 
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;/* 요소가 들어갈 공간을 둥글게 깎아 내고 이미지가 공간 밖으로 삐져나올수있으니 overflow의 값을 hidden으로 주어 요소의 크기를 넘어간 부분은 보이지 않도록 한다. */
+  margin-bottom:12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.15); /* 요소의 그림자를 지정하는 속성 */
+  cursor: pointer;
+}
+
+/* VISUAL */
+.visual {
+  margin-top:120px; /* header 영역이 120px 이므로 겾치게 보이지 않도록 120px 떨어트림 */
+  background-image: url('../images/visual_bg.jpg');
+  background-position:center;
+}
+.visual .inner {
+  height:646px;/* 이미 위애서 inner는 기본적으로 width값을 1100px을 갖게 해놓음*/
+}
+.visual .title {
+  position:absolute;
+  top:88px;
+  left: -10px;
+}
+
+.visual .title .btn {
+  /* margin:30px auto 0; */
+  /* position: absolute; */
+  /* top:259px; */
+  /*left:173px;*/ /* 부모요소를 기준으로 배치를 해준 이유는 부모요소가 이동할때  
+            따로 margin등으로 배치를 해두었다면 title이 이동할때 버튼도 직접 이동 시켜주어야 되지만
+            부모요소를 기준으로 얼만큼 떨어지게 해놓았으므로 부모요소가 이동하더라도 같이 이동할수있게 된다. */
+            /* 이는 곳의 가운데에 자식 요소를 정확히 배치하려면 margin: auto; 또는 다른 방법으로 가운데 정렬을 하는 것이 더 효과적입니다.
+             left: 50px;처럼 고정된 픽셀 단위로 위치를 지정하면 부모 요소의 크기가 변경되었을 때 자식 요소가 더 이상 가운데에 위치하지 않고, 한쪽으로 쏠려보일 수 있습니다. */
+  margin:28px auto 0;
+}
+
+.visual .cup1.image {
+  position:absolute;
+  bottom: 0;
+  right:-47px;
+}
+
+.visual .cup1.text {
+  position: absolute;
+  top:38px;
+  right:171px;
+}
+
+.visual .cup2.image {
+ position: absolute;
+ bottom:0;
+ right:162px;
+}
+
+.visual .cup2.text {
+  position:absolute;
+  top:321px; 
+  right:416px;
+}
+
+.visual .spoon {
+  position:absolute;
+>>>>>>> f443aad (Start project)
   bottom: 0;
   left: 275px;
 }
 .visual .fade-in {
+<<<<<<< HEAD
   opacity: 0;
 }
 
@@ -385,12 +756,93 @@ header .badges .badge {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+=======
+  opacity:0;  
+}
+
+/* NOTICE */
+.notice {
+
+}
+.notice .notice-line {
+  position:relative;
+}
+.notice .notice-line .bg-left {
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  height:100%;
+  background-color:#333;
+}
+
+.notice .notice-line .bg-right {
+  position:absolute;
+  top:0;
+  right:0;
+  width:50%;
+  height:100%;
+  background-color:#f6f5ef;
+}
+
+.notice .notice-line .inner {
+  height:62px;/* notice-line에 포함된 요소는 inner를 빼고는 absolute이므로 inner의 height가 200이면 notice-line의 height는 200px이 되고 width 값은 블록요소이므로 최대로 먹는다.
+  그리고 bg-right와 bg-left를 세로폭의 100%를 먹도록 해두었으니 자동으로 bg-right와 bg-left도 height가 200px이 된다. */
+  display:flex;
+}
+
+.notice .notice-line .inner__left {
+  width:60%;
+  height: 100%;
+  background-color:#333;
+  display:flex;
+  align-items: center; /* 원래의 align-items의 기본값이 stretch여서 swiper-container부분이 height가 자동으로 생기면서 보였던 것인데 그 값을 center로 바꿈으로써 height값이 없다면 보이지 않게되고 height값이 있다면 교차축의 가운데에 위치하게됨 */
+}
+.notice .notice-line .inner__left h2 {
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  margin-right:20px;
+}
+.notice .notice-line .inner__left .swiper-container {
+  height:62px;
+  flex-grow:1;
+}
+.notice .notice-line .inner__left .swiper-slide {
+  height:62px;
+  display:flex;
+  align-items:center;
+}
+.notice .notice-line .inner__left .swiper-slide a {
+  color:#fff;
+}
+.notice .notice-line .inner__left .notice-line__more {
+  color:#fff;
+  width:62px;
+  height:62px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.notice .notice-line .inner__left .notice-line__more .material-icons {
+  color:#fff;
+  font-size:30px;
+}
+
+.notice .notice-line .inner__right {
+  width:40%;
+  height:100%;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+>>>>>>> f443aad (Start project)
 }
 .notice .notice-line .inner__right h2 {
   font-size: 17px;
   font-weight: 700;
 }
 .notice .notice-line .inner__right .toggle-promotion {
+<<<<<<< HEAD
   width: 62px;
   height: 62px;
   cursor: pointer;
@@ -478,10 +930,106 @@ header .badges .badge {
 }
 .notice .promotion .swiper-prev {
   left: 50%;
+=======
+  width:62px;
+  height:62px;
+  cursor: pointer;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.notice .notice-line .inner__right .toggle-promotion .material-icons {
+  font-size:30px;
+}
+.notice .promotion {
+  height:693px;
+  background-color:#f6f5ef;
+  position:relative;
+  transition:height 0.4s;
+  overflow:hidden; /* 공간의 크기가 작아지면서 안의 컨텐츠가 밖으로 넘칠것이므로 overflow를 사용한다. */
+} 
+.notice .promotion.hide {
+  height:0px;
+}
+.notice .promotion .swiper-container {
+  width:calc(819px * 3 + 20px); /* calc 함수는 css에서 계산을 할수있는 함수이고 px이외의 단위도 사용할수있다. 예를들어 100% - 50px 같이 복잡한 계산을 직접할필요 없이 구할수있다. */
+  height:553px;
+  position:absolute;
+  top: 40px;
+  /* left: calc(50% - (819px * 3 + 20px)/2); 이렇게 해줄수도 있음 */
+  left:50%;
+  margin-left: calc((819px * 3 + 20px)/-2); /* 길이의 반을 구하려면 -2가 아니라 2로 나누는게 맞지만 margin을 줘야 하므로 -2로 나눠준다. */
+} 
+.notice .promotion .swiper-slide {
+  opacity: 0.5; /* 슬라이드 요소들을 반투명하게 보이게함 */
+  transition:opacity 1s; /* 가운데에 있는 요소는 계속 바뀌니 옆에 있는 요소도 계속 바뀔것이고 그때 opacity를 자연스럽게 적용하기 위해서 변환효과를 넣어줌 */
+  position:relative;
+}
+.notice .promotion .swiper-slide-active {
+  opacity:1;/* 슬라이드의 가운데에 있는 요소 즉 .swiper-slide-active라는 클래스를 가진 요소는 위에서 만든 opacity값을 무시하도록 opacity값을 1로 줌 즉 가운데의 요소만 잘 보이도록 함 */
+}
+.notice .promotion .swiper-slide .btn {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; /* 이와 같이 수평정렬을 하려면 width값이 있어야 하는데 width값이 없는데요? 라고 생각하면 안된다. 이미 btn클래스에서 width값을 130px로 정해두었기 때문 */
+}
+.notice .promotion .swiper-pagination {
+  bottom:40px;
+  left:0; /* position값을 명시 하지 않았는데도 bottom, left와 같은 값이 사용 가능 한것은 이미 js에서 pagination에 position값이 들어있기 때문이다. */
+  right:0;/* margin:auto 값을 주지 않았는데도 가운데에 정렬이 되는데 차이는
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 200px;이렇게 주고 하면 공간이 200px로 명시가 되어있고 가운데에 정렬이 되고 나머지는 여백이 되는데 
+    지금 주석처리 되지 않는 것처럼 작성을 하면 width값이 정해지지 않은 상태로 왼쪽 끝과 오른쪽 끝에 붙으므로 요소가 뷰포트 전체의
+    width영역을 먹게 되고 오른쪽 왼쪽이 짝짝이로 영역을 먹지 않으니 자연스럽게 요소가 가운데에 오게 되는것임 물론 js에 text-aliogn이 center로 되어있기 때문이기도 하다.*/
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color:transparent;
+  background-image:url('../images/promotion_slide_pager.png');
+  width:12px;
+  height:12px;
+  margin-right:6px;
+  outline:none;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+    margin-right:0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image:url("../images/promotion_slide_pager_on.png")
+}
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next { /* 겹치는 css값을 두개의 클래스에 한번에 적용하기 위해서 사용한 다중 선택자 이러한 다중 선택자를 사용할때에는 각 클래스를 선택하는 것을 쉼표로 구분해주고 시각적으로 보기쉽게 줄바꿈을 꼭해줘야 한다. */
+  width:42px;
+  height:42px;
+  border:2px solid #333;
+  border-radius: 50%;
+  position:absolute;
+  top:300px;
+  z-index:1;
+  cursor:pointer;
+  outline:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:0.4s;
+  /* background-color:#fff;
+  color:#333;
+  text-align:center;
+  font-size:24px;
+  vertical-align: center; */
+}
+.notice .promotion .swiper-prev {
+  left:50%;
+>>>>>>> f443aad (Start project)
   margin-left: -480px;
 }
 .notice .promotion .swiper-next {
   right: 50%;
+<<<<<<< HEAD
   margin-right: -480px;
 }
 .notice .promotion .swiper-prev:hover,
@@ -519,11 +1067,51 @@ header .badges .badge {
   position: absolute;
   right: 0;
   bottom: 24px;
+=======
+  margin-right:-480px;
+}
+.notice .promotion .swiper-prev:hover, 
+.notice .promotion .swiper-next:hover {
+  background-color:#333;
+  color:#fff;
+}
+
+/* REWARDS */
+.rewards {
+  position:relative;
+}
+.rewards .bg-left {
+  width: 50%;
+  height:100%;
+  background-color:#272727;
+  position:absolute;
+  top:0;
+  left:0; /* 이미지의 왼쪽 색상과 동일하게 하고 왼쪽 끝까지 붙여줌 */
+}
+.rewards .bg-right {
+  width:50%;
+  height:100%;
+  background-color:#d5c798;
+  position:absolute;
+  top:0;
+  right:0;/* 이미지의 오른쪽의 색상과 동일하게 하고 오른쪽 끝까지 붙여줘서 마치 한개의 요소처럼 보이게함 */
+}
+
+.rewards .inner {
+  background-image:url("../images/rewards.jpg");
+  height:241px;
+}
+.rewards .btn-group {
+  position:absolute;
+  bottom:24px;
+  right:0;
+>>>>>>> f443aad (Start project)
   width: 250px;
   display: flex;
   flex-wrap: wrap;
 }
 .rewards .btn-group .btn.sign-up {
+<<<<<<< HEAD
   /*width: 130px;*/
   margin-right: 10px;
 }
@@ -587,10 +1175,72 @@ header .badges .badge {
 }
 .youtube .floating2 {
   position: absolute;
+=======
+  margin-right:10px;
+}
+.rewards .btn-group .btn.sign-in {
+  width:110px; /* 원래 위에서 설정해둔 버튼의 크기보다 작은 크기가 필요함 그 필요한 크기를 강사님이 찾아서 알려주신게 110px임 */
+}
+.rewards .btn-group .btn.gift {
+  margin-top: 10px;
+  flex-grow:1; /* 남는 여백을 전부 먹도록 함 */
+}
+
+.youtube {
+  position:relative;
+  height:700px;
+  background-color:#333;
+  overflow:hidden;
+}
+.youtube .youtube__area {
+  width:1920px;
+  background-color:orange;
+  position:absolute;
+  /* right:0; */
+  left:50%;
+  margin-left:calc(1920px/-2);
+  top:50%;
+  margin-top: calc(1920px * 0.5625 / -2);
+}
+.youtube .youtube__area::before { /* 실제 자식요소는 아니지만 첫번째 자식처럼 동작한다. 그래서 자식요소처럼 부모요소의 width나 height를 %로 적용할수있는것. */
+  content:"";
+  display:block;
+  width:100%;
+  height:0;
+  padding-top:56.25%;
+}
+.youtube .youtube__cover {
+  background-image:url('../images/video_cover_pattern.png');
+  background-color:rgba(0,0,0,0.3);
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+#player {
+  width:100%;
+  height: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.youtube .inner {
+  height:700px;
+}
+.youtube .floating1 {
+  position:absolute;
+  top:50px;
+  left:0;
+}
+.youtube .floating2 {
+  position:absolute;
+>>>>>>> f443aad (Start project)
   top: 350px;
   left: 150px;
 }
 
+<<<<<<< HEAD
 
 /*SEASON PRODUCT*/
 .season-product {
@@ -608,6 +1258,24 @@ header .badges .badge {
   position: absolute;
   top: 110px;
   right: 100px;
+=======
+/* SEASON PRODUCT */
+.season-product {
+  background-image:url("../images/season_product_bg.jpg"); /* 여기서 이런 의문이 들수있음 밑에 있는 inner영역은 position값도 있고 product클래스의 이미지는 z-index도 없고 position도 없는데 어떻게 inner 위에 오는거지? 이유는 너무 간단함 일단 inner에는 background에 이미지나 컬러가 없음 그래서 일단 안겹칠수있음 그리고 이미지가 위에 오는 영역에 inner안의 콘텐츠도 위치하지 않음 그래서 겹쳐지지만 inner에 아무것도 없으므로 잘 보이는것임 */
+}
+.season-product .inner {
+  height:400px;
+}
+.season-product .floating3 {
+  position:absolute;
+  top:-200px;
+  right:0;
+}
+.season-product .text-group {
+  position: absolute;
+  top:110px;
+  right:100px;
+>>>>>>> f443aad (Start project)
 }
 .season-product .text-group .title {
   margin-bottom: 10px;
@@ -615,6 +1283,7 @@ header .badges .badge {
 .season-product .text-group .description {
   margin-bottom: 15px;
 }
+<<<<<<< HEAD
 
 
 /*RESERVE COFFEE*/
@@ -680,10 +1349,79 @@ header .badges .badge {
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+.season-product .text-group .more {
+
+}
+
+/* RESERVE COFFEE */
+.reserve-coffee {
+  background-image: url('../images/reserve_bg.jpg');
+}
+.reserve-coffee .inner {
+  height:400px; 
+}
+.reserve-coffee .reserve-logo { /* 부모요소에 position값이 없는데 어떻게 밖으로 안튕겨 나가고잘 들어갔지 라고생각한다면 아주 위에서 inner라는 클래스를 position:relative로 선언을 해두었었다. */
+  position:absolute;
+  top:110px;
+  left:0;
+}
+.reserve-coffee .text-group {
+  position:absolute;
+  top:124px;
+  left:200px;
+  
+}
+.reserve-coffee .product { 
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite {
+  background-image:url("../images/favorite_bg.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment: fixed; /* position값이 fixed가 아님 오해하지 마셈!! */
+  background-size: cover;/* 이 값이 없을때에는 width값이 없었으므로 이미지의 크기만큼만 가운데에 들어가고 여백이 생기는데 background-size로 cover을 주므로 박스요소의 width값 즉 뷰포트 전체 가로에 맞춰서 늘어난다. */
+}
+.pick-your-favorite .inner {
+  padding:110px 0;
+}
+.pick-your-favorite .text-group {
+  margin-left:100px;
+  display:flex;/* 자식 요소들을 flex item으로 만들어서 손쉽게 배치하려고 position값을 flex로 줌 */
+  width:352px; /* 가장 큰 이미지가 들어갈 정도의 가로 너비 */
+  flex-wrap: wrap; /* 줄바꿈이 가능하게함 */
+  justify-content: flex-end; /* 주축인 수평의 끝점으로 배치함 */
+}
+.pick-your-favorite .text-group .title {
+  margin-bottom:40px;
+}
+.pick-your-favorite .text-group .description {
+  margin-bottom:40px;
+}
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image:url("../images/reserve_store_bg.jpg");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment:fixed;
+  background-size: cover;
+}
+.reserve-store .inner {
+  height:600px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+>>>>>>> f443aad (Start project)
 }
 .reserve-store .medal {
   width: 334px;
   height: 334px;
+<<<<<<< HEAD
   perspective: 600px;
 }
 .reserve-store .medal .front,
@@ -695,6 +1433,22 @@ header .badges .badge {
   backface-visibility: hidden;
 }
 .reserve-store .medal .front {
+=======
+  perspective:600px;
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+    /* 생각을 해보니 둘다 absolute 여도 서로에게 어떠한 손해가 없으니 둘다에게 absolute값을 주는 모습 */
+  width: 334px;
+  height: 334px;
+  backface-visibility: hidden;
+  transition:1s;
+  position:absolute;
+}
+
+.reserve-store .medal .front {
+   /* position의 값을 absolute로 주므로써 아래있는 값 즉 형제들과의 상호작용이 없어지므로 한 곳에 겹쳐짐 그걸 원해서 이렇게 position값만 주고 위치조정을 하지 않은것. */
+>>>>>>> f443aad (Start project)
   transform: rotateY(0deg);
 }
 .reserve-store .medal:hover .front {
@@ -711,15 +1465,23 @@ header .badges .badge {
   top: 240px;
   left: 0;
   right: 0;
+<<<<<<< HEAD
   margin: auto;
 }
 
 
 /*FIND STORE*/
+=======
+  margin: 0 auto; /* position이 absolute일때 margin:auto를 하려면 방향에 맞는 길이 값을 알아야 하는데 어떻게 width값이 없는데도 수평 정렬을 했느냐? btn은 이미 위에서 width값을 한번에 지정해둠 */
+}
+
+/* FIND STORE */
+>>>>>>> f443aad (Start project)
 .find-store {
   background-image: url("../images/find_store_bg.jpg");
 }
 .find-store .inner {
+<<<<<<< HEAD
   height: 400px;
 }
 .find-store .texture1 {
@@ -761,16 +1523,63 @@ header .badges .badge {
 /*AWARDS*/
 .awards {
   background-color: #272727;
+=======
+  height:400px; /* inner안에는 이미 position값이 선언되어있다. */
+}
+.find-store .texture1 {
+  position:absolute;
+  top:0;
+  left: 400px;
+}
+.find-store .texture2 {
+  position:absolute;
+  top:0;
+  right: 0;
+}
+.find-store .picture {
+  border-radius: 50%; /* picture 클래스는 두개의 이미지에 공통적으로 들어간 클래스임 */
+  box-shadow:2px 2px 8px rgba(0,0,0,5);
+  position:absolute;
+}
+.find-store .picture1 {
+  top:-60px;
+  left: 0;
+}
+.find-store .picture2 {
+  top:150px;
+  left: 250px;
+}
+.find-store .text-group {
+  position:absolute;
+  top: 120px;
+  left:550px;
+}
+.find-store .text-group .title {
+  margin-bottom:20px;
+}
+.find-store .text-group .description {
+  margin-bottom:20px;
+}
+
+/* AWARDS */
+.awards {
+  background-color:#272727;
+>>>>>>> f443aad (Start project)
 }
 .awards .inner {
   padding: 40px 0;
 }
 .awards .swiper-container {
+<<<<<<< HEAD
   width: 100%;
+=======
+  width:100%;
+>>>>>>> f443aad (Start project)
   height: 40px;
 }
 .awards .swiper-prev,
 .awards .swiper-next {
+<<<<<<< HEAD
   width: 42px;
   height: 42px;
   outline: none;
@@ -805,11 +1614,47 @@ header .badges .badge {
 footer {
   background-color: #272727;
   border-top: 1px solid #333;
+=======
+  width:42px;
+  height:42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing:border-box;
+  outline:none;
+  color:#fff;
+  opacity:0.3;
+  cursor:pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:0;
+  bottom:0;
+  margin: auto 0;
+}
+.awards .swiper-prev{
+  left:-100px;
+}
+.awards .swiper-next {
+  right:-100px;
+}
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover {
+  background-color:#fff;
+  color:#333;
+}
+
+/* FOOTER */
+footer {
+  background-color: #272727;
+  border-top:1px solid #333;
+>>>>>>> f443aad (Start project)
 }
 footer .inner {
   padding: 40px 0 60px 0;
 }
 footer .menu {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
 }
@@ -823,6 +1668,21 @@ footer .menu li::before {
   background-color: #555;
   position: absolute;
   top: 0;
+=======
+  display:flex;
+  justify-content: center;
+}
+footer .menu li{
+  position:relative;
+}
+footer .menu li::before {
+  content:"";
+  width:3px;
+  height:3px;
+  background-color:#555;
+  position: absolute;
+  top:0;
+>>>>>>> f443aad (Start project)
   bottom: 0;
   right: -1px;
   margin: auto;
@@ -831,6 +1691,7 @@ footer .menu li:last-child::before {
   display: none;
 }
 footer .menu li a {
+<<<<<<< HEAD
   display: block;
   color: #CCC;
   font-size: 12px;
@@ -843,10 +1704,25 @@ footer .menu li a.green {
 footer .btn-group {
   margin-top: 20px;
   display: flex;
+=======
+  color:#fff;
+  font-size: 12px;
+  font-weight:700;
+  padding:15px;
+  display:block;
+}
+footer .menu li a.green {
+  color:#669900;
+}
+footer .btn-group {
+  margin-top:20px;
+  display:flex;
+>>>>>>> f443aad (Start project)
   justify-content: center;
 }
 footer .btn-group .btn {
   font-size: 12px;
+<<<<<<< HEAD
   margin-right: 10px;
 }
 footer .btn-group .btn:last-child {
@@ -892,3 +1768,48 @@ footer .logo {
   justify-content: center;
   align-items: center;
 }
+=======
+  margin-right:10px;
+}
+footer .btn-group .btn:last-child {
+  margin-right:0;
+}
+footer .info {
+  margin-top:30px;
+  text-align: center;
+}
+footer .info span {
+  margin-right:20px;
+  color:#999;
+  font-size:12px;
+}
+footer .info span:last-child {
+  margin-right:0;
+}
+footer .copyright {
+    color:#999;
+    font-size:12px;
+    text-align: center;
+    margin-top: 12px;
+}
+footer .logo {
+  margin: 30px auto 0; /* img요소는 widht값을 직접 명시 하지 않아도 기본적으로 width값을 가지고있기 때문에 margin:auto를 사용할수있다. */
+}
+
+#to-top {
+  width: 42px;
+  height:42px;
+  background-color: #333;
+  color:#fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  z-index:9;
+}
+>>>>>>> f443aad (Start project)
