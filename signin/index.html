@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
   <link rel="stylesheet" href="../css/coomon.css"/>
+  <link rel="stylesheet" href="../css/signin.css">
 
   
   <script defer src="../js/common.js"></script>
@@ -47,7 +48,7 @@
     <div class="inner">
 
       <a href="/" class="logo">
-        <img src=".../images/starbucks_logo.png" alt="STARBUCKS" />
+        <img src="../images/starbucks_logo.png" alt="STARBUCKS" />
       </a>
 
       <div class="sub-menu">
@@ -376,8 +377,27 @@
 
 
 
-  <section class="sigin">
-
+  <section class="signin">
+    <h1>로그인</h1>
+    <div class="signin__card"> 
+      <h2>
+        <strong>Welcome!</strong> 스타벅스에 오신 것을 환영합니다. <!--여기서 span 태그 대신 strong 태그를 사용한것은 그게 더 좋거나 다른 필요한 것이 있어서가 아니라 딱봤을때 뭘 하려고 묶어줬구나 하는게 생기기 때문이다.-->
+      </h2>
+      <form>
+        <input type="text" placeholder="아이디를 입력하세요.">
+        <input type="password" placeholder="비밀번호를 입력하세요.">
+        <input type="submit" value="로그인">
+        <p>
+          * 비밀번호를 타 사이트와 같이 사용할 경우 도용 위험이 있은,<br>
+          정기적으로 비밀번호를 변경하세요!
+        </p>
+      </form>
+      <div class="actions">
+        <a href="javascripts:void(0)">회원가입</a>
+        <a href="javascripts:void(0)">아이디 찾기</a>
+        <a href="javascripts:void(0)">비밀번호 찾기</a>
+      </div>
+    </div>
   </section>
 
 
